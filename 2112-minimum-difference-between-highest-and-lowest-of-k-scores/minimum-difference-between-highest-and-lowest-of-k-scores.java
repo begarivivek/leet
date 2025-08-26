@@ -3,21 +3,17 @@ import java.util.*;
 class Solution {
     public int minimumDifference(int[] nums, int k) {
         Arrays.sort(nums);
-
-        List<Integer> list = new ArrayList<>();
-        for (int num : nums) {
-            list.add(num);
-        }
-
+        int n = nums.length;
+        
         int minDiff = Integer.MAX_VALUE;
-
-        for (int i = 0; i <= list.size() - k; i++) {
-            int diff = list.get(i + k - 1) - list.get(i);
+        
+        for (int i = 0; i <= n - k; i++) {
+            int diff = nums[i + k - 1] - nums[i];
             if (diff < minDiff) {
                 minDiff = diff;
             }
         }
-
+        
         return minDiff;
     }
 }
