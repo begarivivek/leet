@@ -1,7 +1,6 @@
 class Solution {
     public String decodeMessage(String key, String message) {
     Map<Character,Character> map = new LinkedHashMap<>();
-    String ans="";
         char[] arr = key.replace(" ", "").toCharArray();
         char[] marr=message.toCharArray();
         char value='a';
@@ -14,13 +13,13 @@ class Solution {
             }
         }
         
-        for(int i=0;i<marr.length;i++)
+        StringBuilder ans = new StringBuilder();
+        for(char c:message.toCharArray())
         {
-            if(marr[i]==' ') ans+=marr[i];
-            else ans+=map.get(marr[i]);
-            
+            if(c==' ') ans.append(' ');
+            else ans.append(map.get(c));
         }
-        return ans;
+        return ans.toString();
 
     }
 }
