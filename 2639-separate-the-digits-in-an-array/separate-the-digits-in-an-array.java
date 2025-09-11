@@ -10,11 +10,12 @@ class Solution {
                 nums[i]=nums[i]/10;
                 temp.add(digit);
             }
-
-            for(int j=temp.size()-1;j>=0;j--)
-            {
-                list.add(temp.get(j));
-            }
+            Collections.reverse(temp);
+            list.addAll(temp);
+            // for(int j=temp.size()-1;j>=0;j--)
+            // {
+            //     list.add(temp.get(j));
+            // }
         }
         int ans[]=new int[list.size()];
         for(int i=0;i<list.size();i++)
