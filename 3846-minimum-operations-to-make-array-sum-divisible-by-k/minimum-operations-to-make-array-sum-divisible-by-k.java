@@ -1,16 +1,13 @@
 class Solution {
     public int minOperations(int[] nums, int k) {
-        int n=nums.length;
-        int sum=0;
-        int c=0;
-        for(int i:nums) sum+=i;
-        
-        while(sum%k!=0)
-        {
-            c++;
-            sum--;
+        int sum = 0 ;
+        for(int i = 0 ; i < nums.length ; i++){
+            sum += nums[i];
         }
-        return c;
-
+        int remainder = sum % k ;
+        if(remainder == 0)
+            return 0 ;
+        else 
+            return remainder ;
     }
 }
