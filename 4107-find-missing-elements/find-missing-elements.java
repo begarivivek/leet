@@ -1,17 +1,17 @@
+import java.util.*;
+
 class Solution {
     public List<Integer> findMissingElements(int[] nums) {
         Arrays.sort(nums);
-        int s=nums[0];
-        int l=nums[nums.length-1];
-        
-        List<Integer> list = new ArrayList<>();
-        for(int num:nums) list.add(num);
-        List<Integer> ans = new ArrayList<>();
+        int s = nums[0];
+        int l = nums[nums.length - 1];
 
-        for(int i=s;i<l;i++)
-        {
-            if(!list.contains(i))
-            {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) set.add(num);
+
+        List<Integer> ans = new ArrayList<>();
+        for (int i = s + 1; i < l; i++) {
+            if (!set.contains(i)) {
                 ans.add(i);
             }
         }
