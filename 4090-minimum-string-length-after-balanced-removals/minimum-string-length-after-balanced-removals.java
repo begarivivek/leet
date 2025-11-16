@@ -6,8 +6,8 @@ class Solution {
             if(s.charAt(i)=='a') ac++;
             else bc++;
         }
-        if(ac==bc) return 0;
-        if(bc==0) return ac;
+        // if(ac==bc) return 0;
+        // if(bc==0) return ac;
         return Math.abs(ac-bc);
     }
 }
