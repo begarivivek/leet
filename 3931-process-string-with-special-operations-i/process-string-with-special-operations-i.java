@@ -5,13 +5,13 @@ class Solution {
             if (Character.isLetter(s.charAt(i))) {
                 sb.append(s.charAt(i));
             }
-            if (s.charAt(i) == '#') {
-                sb.append(sb.toString());
+            else if (s.charAt(i) == '#') {
+                sb.append(sb);
             }
-            if (s.charAt(i) == '*' && sb.length()>0) {
+            else if (s.charAt(i) == '*' && sb.length()>0) {
                 sb.deleteCharAt(sb.length() - 1);
             }
-            if (s.charAt(i) == '%') {
+            else if (s.charAt(i) == '%') {
                     sb.reverse();
             }
         }
