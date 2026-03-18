@@ -1,6 +1,6 @@
 class Solution {
     public String mapWordWeights(String[] words, int[] weights) {
-        String ans = "";
+        StringBuilder ans = new StringBuilder();  
 
         for (int i = 0; i < words.length; i++) {
             String s = words[i];
@@ -13,9 +13,9 @@ class Solution {
             int value = sum % 26;
             char ch = (char) ('z' - value);
 
-            ans += ch;
+            ans.append(ch);  
         }
 
-        return ans;
+        return ans.toString();  
     }
 }
