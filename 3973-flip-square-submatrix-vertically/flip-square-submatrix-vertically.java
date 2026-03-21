@@ -6,12 +6,13 @@ class Solution {
         int sc = y;
         int ec = y + k - 1;
 
-        for (int i = sr; i <= er; i++) {
+        while(sr<er) {
             for (int j = sc; j <= ec; j++) {
-                int temp = grid[i][j];
-                grid[i][j] = grid[er][j];
+                int temp = grid[sr][j];
+                grid[sr][j] = grid[er][j];
                 grid[er][j] = temp;
             }
+            sr++;
             er--;
         }
         return grid;
